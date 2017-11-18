@@ -1,0 +1,8 @@
+config BR2_PACKAGE_GFX
+	bool "gfx"
+	depends on BR2_PACKAGE_LIBDRM
+	depends on BR2_PACKAGE_MESA3D_OPENGL_EGL
+	depends on BR2_PACKAGE_MESA3D_OPENGL_ES
+	select BR2_PACKAGE_LIBPNG
+	help
+	  gfx programs

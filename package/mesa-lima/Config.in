@@ -1,0 +1,14 @@
+
+# NOTE: this is a hack. See mesa-lima.mk for more details.
+
+if BR2_PACKAGE_MESA3D
+
+config BR2_PACKAGE_MESA3D_GALLIUM_DRIVER_LIMA
+	bool "mesa3d lima driver"
+	depends on BR2_arm || BR2_aarch64
+	select BR2_PACKAGE_MESA3D_DRI_DRIVER
+	select BR2_PACKAGE_MESA3D_GALLIUM_DRIVER
+	help
+	  OpenGL driver for ARM Mali400
+
+endif # BR2_PACKAGE_MESA3D

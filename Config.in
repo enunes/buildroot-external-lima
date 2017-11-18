@@ -1,0 +1,3 @@
+source "$BR2_EXTERNAL_LIMA_PATH/package/mesa-lima/Config.in"
+source "$BR2_EXTERNAL_LIMA_PATH/package/gfx/Config.in"
+source "$BR2_EXTERNAL_LIMA_PATH/package/mesa-test-programs/Config.in"
