@@ -30,13 +30,15 @@ git clone https://github.com/yuq/linux-lima.git
 Now, we need to create an output directory to be our workspace while we use Buildroot.
 
 Use one of the following commands to create that and use one of the predefined configurations from this repository that include lima and the demo programs.
-Predefined configurations are provided for the Cubieboard2 and NanoPi M1 boards.
+Predefined configurations are provided for the Cubieboard2, Bananapi M1 Plus, NanoPi M1 boards.
 (More details about [BR2_EXTERNAL in the manual](https://buildroot.org/downloads/manual/manual.html#outside-br-custom)).
 
 ```
 make -C buildroot O=$PWD/output BR2_EXTERNAL=$PWD/buildroot-external-lima lima_nanopi_m1_defconfig
   or
 make -C buildroot O=$PWD/output BR2_EXTERNAL=$PWD/buildroot-external-lima lima_cubieboard2_defconfig
+  or
+make -C buildroot O=$PWD/output BR2_EXTERNAL=$PWD/buildroot-external-lima lima_bananapi_m1_plus_defconfig
 ```
 
 The output directory will be called `output` (note: there can be multiple simultaneous outputs, by changing `O=` to point to another path).
