@@ -1,6 +1,8 @@
 ## buildroot-external-lima
 
-This is a [BR2_EXTERNAL](https://buildroot.org/downloads/manual/manual.html#outside-br-custom) tree for [Buildroot](https://buildroot.org/) which contains modifications to the mesa3d package so that it supports building the mesa port of [lima](https://github.com/yuq/mesa-lima) (OpenGL driver for ARM Mali400), to be used for people interested in developing or trying lima.
+This is a [BR2_EXTERNAL](https://buildroot.org/downloads/manual/manual.html#outside-br-custom) tree for [Buildroot](https://buildroot.org/) which contains modifications to the mesa3d package so that it supports building the mesa port of [lima](https://github.com/yuq/mesa-lima) (OpenGL driver for ARM Mali400/450), to be used for people interested in developing or trying lima.
+
+See [mesa-lima](https://github.com/yuq/mesa-lima), [linux-lima](https://github.com/yuq/linux-lima) and the [wiki](https://github.com/yuq/mesa-lima/wiki) for more information about the driver.
 
 The normal Buildroot development workflow can be used with this tree, so the [Buildroot manual](https://buildroot.org/downloads/manual/manual.html) can be used.
 
@@ -30,15 +32,17 @@ git clone https://github.com/yuq/linux-lima.git
 Now, we need to create an output directory to be our workspace while we use Buildroot.
 
 Use one of the following commands to create that and use one of the predefined configurations from this repository that include lima and the demo programs.
-Predefined configurations are provided for the Cubieboard2, Bananapi M1 Plus, NanoPi M1 boards.
+Predefined configurations are provided for the Cubieboard2, Bananapi M1 Plus, Banana Pro, NanoPi M1 boards.
 (More details about [BR2_EXTERNAL in the manual](https://buildroot.org/downloads/manual/manual.html#outside-br-custom)).
 
 ```
-make -C buildroot O=$PWD/output BR2_EXTERNAL=$PWD/buildroot-external-lima lima_nanopi_m1_defconfig
-  or
 make -C buildroot O=$PWD/output BR2_EXTERNAL=$PWD/buildroot-external-lima lima_cubieboard2_defconfig
   or
 make -C buildroot O=$PWD/output BR2_EXTERNAL=$PWD/buildroot-external-lima lima_bananapi_m1_plus_defconfig
+  or
+make -C buildroot O=$PWD/output BR2_EXTERNAL=$PWD/buildroot-external-lima lima_bananapro_defconfig
+  or
+make -C buildroot O=$PWD/output BR2_EXTERNAL=$PWD/buildroot-external-lima lima_nanopi_m1_defconfig
 ```
 
 The output directory will be called `output` (note: there can be multiple simultaneous outputs, by changing `O=` to point to another path).
@@ -120,7 +124,14 @@ If you have a monitor plugged in, you can also try `gbm-bo-test` for rendering t
 # ./gbm-bo-test
 ```
 
-Enjoy your triangles!
+`kmscube` is a nice well-known upstream demo (for a smoother animation without slowdowns, redirect all debug output to `/dev/null`):
+
+```
+# kmscube >/dev/null 2>&1
+# kmscube -M rgba >/dev/null 2>&1
+```
+
+See https://github.com/yuq/mesa-lima/wiki#status for a more up-to-date list of working features.
 
 ## Development workflow
 
