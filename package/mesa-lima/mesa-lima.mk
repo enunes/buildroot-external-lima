@@ -27,5 +27,12 @@ define MESA3D_DEPENDENCY_MAKO
 endef
 MESA3D_PRE_CONFIGURE_HOOKS += MESA3D_DEPENDENCY_MAKO
 
-# Make mesa3d build with --with-gallium-drivers=lima,sun4i
-MESA3D_GALLIUM_DRIVERS-$(BR2_PACKAGE_MESA3D_GALLIUM_DRIVER_LIMA) += lima sun4i exynos
+# Make mesa3d build with --with-gallium-drivers=lima,sun4i,exynos,meson,rockchip
+MESA3D_GALLIUM_DRIVERS-$(BR2_PACKAGE_MESA3D_GALLIUM_DRIVER_LIMA) += lima sun4i exynos meson rockchip
+
+# Using local.mk, after the rsync we end up with no git repo.
+# Setting MESA_GIT_SHA1_OVERRIDE will put this string to the GL_VERSION.
+# Also, the build will detect it's the same all the time and avoid
+# rebuilding some mesa libs on every build by not writing the git_sha1.h
+# file unnecessarily.
+MESA3D_MAKE_ENV += MESA_GIT_SHA1_OVERRIDE=lima
