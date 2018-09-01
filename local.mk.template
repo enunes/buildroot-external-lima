@@ -1,7 +1,7 @@
 # Copy this to a local.mk file in your Buildroot output tree.
 # https://buildroot.org/downloads/manual/manual.html#_using_buildroot_during_development
 
-MESA3D_OVERRIDE_SRCDIR=/path/to/where/you/cloned/mesa-lima
-LINUX_OVERRIDE_SRCDIR=/path/to/where/you/cloned/linux-lima
+MESA3D_OVERRIDE_SRCDIR=/path/to/where/you/cloned/mesa
+LINUX_OVERRIDE_SRCDIR=/path/to/where/you/cloned/linux
 #MESA_TEST_PROGRAMS_OVERRIDE_SRCDIR=/path/to/where/you/cloned/mesa-test-programs
 #GFX_OVERRIDE_SRCDIR=/path/to/where/you/cloned/gfx
