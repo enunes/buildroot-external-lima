@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-GFX_VERSION = f237cdbdeb9b6dcaeb0278eacf5ce25f7f20181f
+GFX_VERSION = 3f32cc9190d372026cf2b2a1eae633acefc467db
 GFX_SITE = $(call github,yuq,gfx,$(GFX_VERSION))
 GFX_LICENSE = Unknown
 GFX_LICENSE_FILES = .gitignore
