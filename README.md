@@ -1,12 +1,8 @@
 # Deprecation notice
 
-lima is now finally merged upstream!
-It can be now found in the [drm-misc](https://cgit.freedesktop.org/drm/drm-misc/) linux tree and upstream [mesa](https://gitlab.freedesktop.org/mesa/mesa).
-Therefore, this repository is currently deprecated and will become unnecessary soon.
-
-There is no released version of these components yet containing lima, so the instructions in this repo can still be useful as a quick guide to use the git repos with Buildroot.
-Upstream mesa can't be used with Buildroot right now because Buildroot builds mesa using autotools and lima is only supported with the meson build system.
-
+Lima is now in the upstream [linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpu/drm/lima) tree and upstream [mesa](https://gitlab.freedesktop.org/mesa/mesa).
+It is now also available in [Buildroot](https://patchwork.ozlabs.org/patch/1165617/) upstream.
+Therefore, this repository is no longer necessary.
 
 ## buildroot-external-lima
 
